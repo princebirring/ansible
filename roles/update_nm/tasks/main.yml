@@ -1,0 +1,8 @@
+---
+- name: Configure NetworkManager for k8s cluster
+  shell: |
+    systemctl restart NetworkManager
+    nmcli con mod eth0 ipv4.dns-search "office.comscore.com"
+    nmcli con mod eth0 ipv4.dns "10.101.250.91 10.101.250.117"
+    nmcli con mod eth0 ipv4.dns-options rotate
+    systemctl restart NetworkManager

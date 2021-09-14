@@ -1,0 +1,7 @@
+---
+- hosts: all
+  roles:
+    - { role: change_yum_config, tags: ["change_yum_config"] }
+    - { role: install_packages, tags: ["install_packages"] }
+    - { role: update_nm, tags: ["update_nm"]}
+   # - { role: install_docker, tags: ["install-docker"] }

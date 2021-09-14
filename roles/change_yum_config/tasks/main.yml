@@ -1,0 +1,6 @@
+---
+- name: Ensure yum.config is set to using external repos
+  lineinfile:
+    path: /etc/yum.conf
+    regexp: '^reposdir=/'
+    line: reposdir=/etc/yum.repos.d/

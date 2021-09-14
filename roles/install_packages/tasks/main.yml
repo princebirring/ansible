@@ -1,0 +1,16 @@
+---
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+    update_only: yes
+
+- name: install necessary packages
+  yum:
+    name:
+      - yum-utils
+      - sshpass
+      - yum-plugin-versionlock
+    state: latest
+    update_cache: yes
+    
